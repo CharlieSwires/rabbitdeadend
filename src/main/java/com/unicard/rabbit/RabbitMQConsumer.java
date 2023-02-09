@@ -21,6 +21,8 @@ public class RabbitMQConsumer {
 
     @RabbitListener(queues = {"${rabbitmq.queue3.name}"})
     public void consume(String message){
+    	if (message == null) return;
+
     	ObjectMapper mapper = new ObjectMapper();
     	RequestBean bean = null;
 		try {
