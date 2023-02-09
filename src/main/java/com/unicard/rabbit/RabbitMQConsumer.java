@@ -29,10 +29,15 @@ public class RabbitMQConsumer {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		//Long result = service.save(bean.getList(), bean.getMessageId());
-		Long result = bean.getMessageId();
-      	producer.sendMessage(result);
+		String jsonStr = null;
+		try {
+			jsonStr = mapper.writeValueAsString(bean);
+		} catch (JsonProcessingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+     	producer.sendMessage(jsonStr);
 
-        LOGGER.info(String.format("Received message -> %s", result.toString()));
+        LOGGER.info(String.format("Received message -> %s", jsonStr));
     }
 }
