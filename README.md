@@ -1,7 +1,7 @@
 rabbit3
 -------
 <p>in git bash</p>
-<p>git clone https://gitlab.com/UnicardLtd/playground/rabbitdeadend.git</p>
+<p>git clone https://github.com/CharlieSwires/rabbitdeadend.git</p>
 <p>This contains the java</p>
 
 build
